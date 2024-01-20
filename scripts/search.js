@@ -4,7 +4,7 @@ const abi = new ethers.AbiCoder();
 async function main() {
   console.log("start to search new address!");
 
-  let nonce = 203;
+  let nonce = 87000;
   for (;;) {
     const signer = ethers.keccak256(
       abi.encode(["string", "uint256"], ["find", nonce])
@@ -23,7 +23,7 @@ async function main() {
       break;
     }
 
-    if (nonce % 100 == 0) {
+    if (nonce % 10000 == 0) {
       console.log("till: ", nonce);
     }
     nonce++;
